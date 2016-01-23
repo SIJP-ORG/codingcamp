@@ -1,33 +1,51 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', main);
 
-  //window.title = 'hello';
+function main() {
+  document.body.style.position = 'relative';
+  //document.body.style.backgroundColor = "#000000";
+  initCanvas();
+  initMessage();
+  addRibbon();
+}
 
-  var x = document.getElementById('message');
-  x.style.fontSize = "80px";
-  x.style.position = "absolute";
-  x.style.top = "180px";
-  x.style.left = "100px";
-  x.style.zIndex = '4';
+function initCanvas() {
+  var elm = document.getElementById('cvs');
+  elm.style.position = "absolute";
+  elm.style.backgroundColor = "white";
+  elm.style.background = 'url(http://www.planet-aye.co.uk/seasonal05/snow.png)';
+  elm.style.top = "0px";
+  elm.style.left = "0px";
+  elm.style.width = "640px";
+  elm.style.height = "480px";
+  elm.style.zIndex = "1";
+  elm.style.pointerEvents = "none";
+}
 
-  var canvas = document.getElementById('can');
-  var context = canvas.getContext('2d');
+function initMessage() {
+  var elm = document.getElementById('msg');
+  elm.style.position = "absolute";
+  elm.style.fontSize = "80px";
+  elm.style.top = "180px";
+  elm.style.left = "100px";
+  elm.style.zIndex = '4';
+  elm.style.top = "180px";
 
-  canvas.style.position = "absolute";
-  canvas.style.background = 'url(http://www.planet-aye.co.uk/seasonal05/snow.png)';
-  canvas.style.top = "0px";
-  canvas.style.left = "0px";
-  canvas.style.width = "640px";
-  canvas.style.height = "480px";
-  canvas.style.zIndex = "1";
-  canvas.style.pointerEvents = "none";
+elm.addEventListener('mousedown', function() {
+    alert('merssage is hit')
+  });
+}
 
-  var ribbon = document.createElement('img');
-  document.body.appendChild(ribbon);
-  ribbon.style.backgroundColor = "#000000";
-  ribbon.style.height = 100;
-  ribbon.src = 'http://pngimg.com/upload/ribbon_PNG1557.png';
-  ribbon.addEventListener('mousedown', function() {
+function addRibbon() {
+  var elm = document.createElement('img');
+  elm.style.position = "relative";
+  document.body.appendChild(elm);
+  elm.style.top = '120px';
+  elm.style.left = '200px'
+  elm.style.backgroundColor = "#000000";
+  elm.style.height = 100;
+  elm.style.zIndex = '9';
+  elm.src = 'http://pngimg.com/upload/ribbon_PNG1557.png';
+  elm.addEventListener('mousedown', function() {
     alert('hi')
-  }, false);
-
-});
+  });
+}
