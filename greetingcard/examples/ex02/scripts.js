@@ -23,63 +23,87 @@ function initCanvas() {
   cnv.style.pointerEvents = "none";
 
   var ctx = cnv.getContext("2d");
-  ctx.fillStyle = '#ff0000';
-  ctx.fillRect(0, 0, 640, 80);
+  //ctx.fillStyle = '#0000ff';
+  //ctx.fillRect(0, 80, 640, 80);
 }
 
 function initMainMessage() {
-  var msg = document.getElementById('mainMessage');
-  msg.innerHTML = 'あけましておめでとうございます!';
-  msg.style.position = "absolute";
-  msg.style.fontSize = "40px";
-  msg.style.top = "70px";
-  msg.style.left = "70px";
-  msg.style.zIndex = '4';
-
-  msg.addEventListener('mousedown', function() {
-    alert('merssage is hit')
-  });
+  // var msg = document.getElementById('mainMessage');
+  // msg.innerHTML = 'Merry Chrismas';
+  // msg.style.position = "absolute";
+  // msg.style.fontSize = "40px";
+  // msg.style.top = "70px";
+  // msg.style.left = "70px";
+  // msg.style.zIndex = '4';
+  //
+  // msg.addEventListener('mousedown', function() {
+  //   alert('merssage is hit')
+  // });
 }
 
 function addAction() {
   var img = document.createElement('img');
   document.getElementById('card').appendChild(img);
   img.style.position = "absolute";
-  img.style.top = '130px';
-  img.style.left = '260px'
-  img.style.height = 100;
+  img.style.top = '230px';
+  img.style.left = '30px'
+  img.style.height = 200;
   img.style.zIndex = '9';
-  img.src = 'nenga_mark18_kadomatsu.png';
+  img.src = 'christmas_usagi.png';
   img.addEventListener('mousedown', effect);
+
+  var box = document.createElement('img');
+  document.getElementById('card').appendChild(box);
+  box.style.position = 'absolute';
+  box.src = 'fukidashi_bw03.png';
+  box.style.top = '20px';
+  box.style.left = '120px';
+  box.style.height = '400';
+  box.style.zIndex = '9';
 
   var inst = document.createElement('p');
   document.getElementById('card').appendChild(inst);
   inst.style.position = 'absolute';
-  inst.style.top = '210px';
-  inst.style.left = '250';
+  inst.style.top = '410px';
+  inst.style.left = '50';
   inst.style.zIndex = '9';
-  inst.innerHTML = '門松をクリックしてね';
+  inst.innerHTML = 'サンタさんをクリックしてね';
 
   var para = document.createElement('div');
   para.id = 'para';
-  para.innerHTML = '今年もよろしくお願いします';
+  para.innerHTML = 'Merry Christmas!';
   document.getElementById('card').appendChild(para);
   para.style.position = 'absolute';
-  para.style.fontSize = '30px';
-  para.style.left = '100px';
-  para.style.zIndex = '0';
+  para.style.top = '170';
+  para.style.fontSize = '50px';
+  para.style.left = '190px';
+  para.style.zIndex = '9';
 }
 
 function effect() {
     var elem = document.getElementById("para");
-    var pos = 200;
-    var id = setInterval(frame, 5);
+    var pos = 300;
+    var fsize = parseInt( elem.style.fontSize, 10);
+    var larger = true;
+    var id = setInterval(frame, 105);
     function frame() {
-        if (pos == 350) {
+        if (pos >= 350) {
             clearInterval(id);
         } else {
             pos++;
-            elem.style.top = pos + 'px';
+            elem.style.color = pos;
+            if (pos % 5 === 0) {
+              larger = !larger;
+            }
+
+            if (larger) {
+              fsize++;
+            } else {
+              fsize--;
+            }
+            //fsize = larger ? fsize++ : fsize--;
+            elem.style.fontSize = fsize + "px";
+            //elem.style.top = pos + 'px';
             //elem.style.left = pos + 'px';
         }
     }
