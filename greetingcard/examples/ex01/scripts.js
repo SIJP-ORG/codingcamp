@@ -1,77 +1,69 @@
-var Constants = {
-  CARD_WIDTH: '640px',
-  CARD_HEIGHT: '480px'
-};
 
-function initCard() {
-  var crd = document.getElementById('card');
-  crd.style.position = 'absolute';
-  crd.style.left = '50%';
-  crd.style.width = Constants.CARD_WIDTH;
-  crd.style.height = Constants.CARD_HEIGHT;
-  crd.style.marginLeft = parseInt(Constants.CARD_WIDTH, 10) / 2 * -1 + 'px';
-  crd.style.boxShadow = '10px 10px 5px #888888';
+function setupCard() {
+  var el = document.getElementById('card');
+  el.style.background = 'url(nc114407.jpg)';
+  el.style.position = 'absolute';
+  el.style.top = '5%';
+  el.style.left = '50%';
+  el.style.height = '480px';
+  el.style.width = '640px';
+  el.style.marginLeft = 640 / 2 * -1 + 'px';
+  el.style.boxShadow = '10px 10px 5px #888888';
 }
 
-function initCanvas() {
-  var cnv = document.getElementById('canvas');
-  cnv.style.position = "absolute";
-  cnv.style.background = 'url(http://www.pl:et-aye.co.uk/seasonal05/snow.png)';
-  cnv.style.width = Constants.CARD_WIDTH;
-  cnv.style.height = Constants.CARD_HEIGHT;
-  cnv.style.zIndex = "1";
-  cnv.style.pointerEvents = "none";
-
-  var ctx = cnv.getContext("2d");
-  ctx.fillStyle = '#ff0000';
-  ctx.fillRect(0, 0, 640, 80);
+function setupCanvas() {
+  var el = document.getElementById('canvas');
+  el.style.position = "absolute";
+  el.style.top = '0px';
+  el.style.left = '0px';
+  el.style.height = '480px';
+  el.style.width = '640px';
 }
 
-function initMainMessage() {
-  var msg = document.getElementById('mainMessage');
-  msg.innerHTML = 'あけましておめでとうございます!';
-  msg.style.position = "absolute";
-  msg.style.fontSize = "40px";
-  msg.style.top = "70px";
-  msg.style.left = "70px";
-  msg.style.zIndex = '4';
-
-  msg.addEventListener('mousedown', function() {
-    alert('merssage is hit')
-  });
+function drawShapes() {
+  var cx = document.getElementById('canvas').getContext("2d");
+  cx.fillStyle = '#ff0000';
+  cx.fillRect(0, 0, 640, 80);
 }
 
-function addAction() {
-  var img = document.createElement('img');
-  document.getElementById('card').appendChild(img);
-  img.style.position = "absolute";
-  img.style.top = '130px';
-  img.style.left = '260px'
-  img.style.height = 100;
-  img.style.zIndex = '9';
-  img.src = 'nenga_mark18_kadomatsu.png';
-  img.addEventListener('mousedown', effect);
+function setupGreeting() {
+  var gr = document.getElementById('greeting');
+  gr.textContent = 'あけましておめでとうございます!';
+  gr.style.position = "absolute";
+  gr.style.top = "70px";
+  gr.style.left = "70px";
+  gr.style.fontSize = "38px";
+}
 
-  var inst = document.createElement('p');
-  document.getElementById('card').appendChild(inst);
-  inst.style.position = 'absolute';
-  inst.style.top = '210px';
-  inst.style.left = '250';
-  inst.style.zIndex = '9';
-  inst.innerHTML = '門松をクリックしてね';
+function setupAction() {
+  var msg = document.createElement('div');
+  msg.textContent = '今年もよろしくお願いします';
+  msg.style.position = 'absolute';
+  msg.style.top = '-200px'
+  msg.style.left = '140px';
+  msg.style.fontSize = '30px';
+  msg.id = 'message';
+  document.getElementById('card').appendChild(msg);
 
-  var para = document.createElement('div');
-  para.id = 'para';
-  para.innerHTML = '今年もよろしくお願いします';
-  document.getElementById('card').appendChild(para);
-  para.style.position = 'absolute';
-  para.style.fontSize = '30px';
-  para.style.left = '100px';
-  para.style.zIndex = '0';
+  var icon = document.createElement('img');
+  icon.src = 'nenga_mark18_kadomatsu.png';
+  icon.style.position = "absolute";
+  icon.style.top = '130px';
+  icon.style.left = '260px'
+  icon.style.height = 100;
+  icon.addEventListener('mousedown', effect);
+  document.getElementById('card').appendChild(icon);
+
+  var hint = document.createElement('p');
+  hint.textContent = '門松をクリックしてね';
+  hint.style.position = 'absolute';
+  hint.style.top = '210px';
+  hint.style.left = '250';
+  document.getElementById('card').appendChild(hint);
 }
 
 function effect() {
-    var elem = document.getElementById("para");
+    var el = document.getElementById("message");
     var pos = 200;
     var id = setInterval(frame, 5);
     function frame() {
@@ -79,17 +71,17 @@ function effect() {
             clearInterval(id);
         } else {
             pos++;
-            elem.style.top = pos + 'px';
-            //elem.style.left = pos + 'px';
+            el.style.top = pos + 'px';
         }
     }
 }
 
 function main() {
-  initCard();
-  initCanvas();
-  initMainMessage();
-  addAction();
+  setupCard();
+  setupCanvas();
+  drawShapes();
+  setupGreeting();
+  setupAction();
 }
 
 window.addEventListener('load', main);
