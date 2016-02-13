@@ -14,17 +14,20 @@
 
   function setupGreeting() {
     var el = document.getElementById("greeting");
-    el.textContent = "Merry Christmas!"
     el.style.position = "absolute";
     el.style.top = "120px";
     el.style.left = "100px";
     el.style.fontSize = "60px";
+    if (window.navigator.languages[0] == "ja") {
+      el.textContent = "メリークリスマス！";
+    } else {
+      el.textContent = "Merry Christmas!";
+    }
   }
 
   function setupMessage() {
     var el = document.createElement("p");
     document.getElementById("card").appendChild(el);
-    el.textContent = "⇦アイコンをクリックしてね"
     el.style.position = "absolute";
     el.style.top = "270px";
     el.style.left = "170px"
@@ -33,6 +36,11 @@
     el.style.fontSize = "24px";
     el.style.color = "gray";
     el.id = "msg";
+    if (window.navigator.languages[0] == "ja") {
+      el.textContent = "⇦アイコンをクリックしてね";
+    } else {
+      el.textContent = "⇦Please click the icon";
+    }
   }
 
   function setupIcon() {
@@ -45,8 +53,25 @@
     el.style.height = "100px";
     el.addEventListener("mousedown", function() {
       var msg = document.getElementById("msg");
-      msg.textContent = "ステキなクリスマスになりますように！";
+      if (window.navigator.languages[0] == "ja") {
+        msg.textContent = "ステキなクリスマスになりますように！";
+      } else {
+        msg.textContent = "Have a nice Christmas!";
+      }
       msg.style.color = "black"
+
+      for (var i = 0; i < 2; i++) {
+        var x = Math.floor((Math.random() * 640) + 1);
+        var y = Math.floor((Math.random() * 480) + 1);
+        var el = document.createElement("img");
+        document.getElementById("card").appendChild(el);
+        el.style.position = "absolute";
+        el.style.top = y;
+        el.style.left = x;
+        el.style.heigh = "30px";
+        el.style.width = "30px";
+        el.src = "snow_crystal3.png";
+      }
     });
   }
 
