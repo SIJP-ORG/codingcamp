@@ -15,8 +15,8 @@
   function setupGreeting() {
     var el = document.getElementById("greeting");
     el.style.position = "absolute";
-    el.style.left = 0;
-    el.style.top = 0;
+    el.style.left = 100;
+    el.style.top = 120;
     el.style.fontSize = "60px";
     if (window.navigator.languages[0] == "ja") {
       el.textContent = "メリークリスマス！";

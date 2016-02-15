@@ -8,7 +8,7 @@
     el.style.top = "5%";
     el.style.width = 640;
     el.style.height = 480;
-    el.style.marginLeft = 640 / 2 * -1 + "px";
+    el.style.marginLeft = 640 / 2 * -1;
     el.style.boxShadow = "10px 10px 5px #888888";
   }
 
@@ -61,7 +61,7 @@
         msg.textContent = "Have a nice Christmas!";
       };
 
-      for (var i = 0; i < 2; i++) {
+      for (var i = 0; i < 10; i++) {
         var x = Math.floor((Math.random() * 640) + 1);
         var y = Math.floor((Math.random() * 480) + 1);
         var el = document.createElement("img");

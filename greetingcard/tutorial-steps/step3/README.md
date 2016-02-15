@@ -1,5 +1,5 @@
 #template
 
-Fix: set the position of the main message to the center
+Change: bug fix. Display the correct message when user clicks the icon.
 
-Bug: message displayed is not correct language.
+Bug/improvement: the number of stars shown is small. Only two.
