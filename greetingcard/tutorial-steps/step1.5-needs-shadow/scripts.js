@@ -52,11 +52,7 @@
     el.style.height = 100;
     el.addEventListener("mousedown", function() {
       var msg = document.getElementById("msg");
-      if (window.navigator.languages[0] == "ja") {
-        msg.textContent = "Have a nice Christmas!";
-      } else {
-        msg.textContent = "ステキなクリスマスになりますように！";
-      };
+      msg.textContent = "ステキなクリスマスになりますように！";
 
       var x = Math.floor((Math.random() * 640) + 1);
       var y = Math.floor((Math.random() * 480) + 1);
