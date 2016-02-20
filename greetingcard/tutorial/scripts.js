@@ -15,11 +15,11 @@
   function setupGreeting() {
     var el = document.getElementById("greeting");
     el.style.position = "absolute";
-    el.style.left = 0;
-    el.style.top = 0;
+    el.style.left = 100;
+    el.style.top = 120;
     el.style.fontSize = "60px";
     if (window.navigator.languages[0] == "ja") {
-      el.textContent = "メリークリススマ！";
+      el.textContent = "メリークリスマス！";
     } else {
       el.textContent = "Merry Christmas!";
     }
@@ -45,7 +45,7 @@
   function setupIcon() {
     var el = document.createElement("img");
     document.getElementById("card").appendChild(el);
-    el.src = "santa.png";
+    el.src = "christmas_mark01_santa.png";
     el.style.position = "absolute";
     el.style.left = 80;
     el.style.top = 260;
