@@ -9,7 +9,7 @@
     el.style.width = 640;
     el.style.height = 480;
     el.style.marginLeft = 640 / 2 * -1 + "px";
-    el.style.boxShadow = "10px 10px 5px #888888";
+    el.style.border = "solid black 1px";
   }
 
   function setupGreeting() {
