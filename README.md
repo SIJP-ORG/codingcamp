@@ -1,3 +1,3 @@
-# kids
+# SIJP コーディングキャンプ教材
 
-This is mainly for kids coding classes.
+Seattle IT Japanese Professional 主催のコーディングキャンプで使用する各種教材とうのレポジトリです。
