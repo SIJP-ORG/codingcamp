@@ -1,3 +1,1 @@
-# kids
-
-This is mainly for kids coding classes.
+# SIJP コーディングキャンプ Webサイト
