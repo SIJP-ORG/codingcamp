@@ -3,10 +3,10 @@ function setupCard() {
   var el = document.getElementById("card");
   el.style.background = "url(nc114407.jpg)";
   el.style.position = "absolute";
-  el.style.top = "5%";
   el.style.left = "50%";
-  el.style.height = "480px";
-  el.style.width = "640px";
+  el.style.top = "5%";
+  el.style.width = 640;
+  el.style.height = 480;
   el.style.marginLeft = 640 / 2 * -1 + "px";
   el.style.boxShadow = "10px 10px 5px #888888";
 }
@@ -14,10 +14,10 @@ function setupCard() {
 function setupCanvas() {
   var el = document.getElementById("canvas");
   el.style.position = "absolute";
-  el.style.top = "0px";
-  el.style.left = "0px";
-  el.style.height = "480px";
-  el.style.width = "640px";
+  el.style.left = 0;
+  el.style.top = 0;
+  el.style.height = 480;
+  el.style.width = 640;
 }
 
 function drawShapes() {
@@ -30,8 +30,8 @@ function setupGreeting() {
   var gr = document.getElementById("greeting");
   gr.textContent = "あけましておめでとうございます!";
   gr.style.position = "absolute";
-  gr.style.top = "70px";
-  gr.style.left = "70px";
+  gr.style.left = 70;
+  gr.style.top = 70;
   gr.style.fontSize = "38px";
 }
 
@@ -39,8 +39,8 @@ function setupAction() {
   var msg = document.createElement("div");
   msg.textContent = "今年もよろしくお願いします";
   msg.style.position = "absolute";
-  msg.style.top = "-200px"
-  msg.style.left = "140px";
+  msg.style.left = 140;
+  msg.style.top = -200
   msg.style.fontSize = "30px";
   msg.id = "message";
   document.getElementById("card").appendChild(msg);
@@ -48,8 +48,8 @@ function setupAction() {
   var icon = document.createElement("img");
   icon.src = "nenga_mark18_kadomatsu.png";
   icon.style.position = "absolute";
-  icon.style.top = "130px";
-  icon.style.left = "260px"
+  icon.style.left = 260;
+  icon.style.top = 130;
   icon.style.height = 100;
   icon.addEventListener("mousedown", effect);
   document.getElementById("card").appendChild(icon);
@@ -57,8 +57,8 @@ function setupAction() {
   var hint = document.createElement("p");
   hint.textContent = "門松をクリックしてね";
   hint.style.position = "absolute";
-  hint.style.top = "210px";
-  hint.style.left = "250";
+  hint.style.left = 250;
+  hint.style.top = 210;
   document.getElementById("card").appendChild(hint);
 }
 
