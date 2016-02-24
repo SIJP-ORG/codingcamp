@@ -52,7 +52,7 @@
     el.style.left = 80;
     el.style.top = 260;
     el.style.height = 100;
-
+    
     el.addEventListener("mousedown", function() {
       var msg = document.getElementById("msg");
       if (window.navigator.languages[0] == "ja") {
@@ -74,6 +74,19 @@
         el.src = "snow_crystal3.png";
       }
     });
+  }
+
+  function setLayout(element, x, y, width, height) {
+    element.style.position = "absolute";
+    element.style.left = x;
+    element.style.top = y;
+
+    if (width != -1) {
+      element.style.width = width;
+    }
+    if (height != -1) {
+      element.style.height = height;
+    }
   }
 
   SIJPCC.main = function() {

@@ -52,7 +52,7 @@
     el.style.left = 80;
     el.style.top = 260;
     el.style.height = 100;
-
+    
     el.addEventListener("mousedown", function() {
       var msg = document.getElementById("msg");
       if (window.navigator.languages[0] == "ja") {

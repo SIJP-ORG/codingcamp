@@ -1,22 +1,16 @@
-(function(SIJPCC){
+(function(SIJPCC) {
 
   function setupCard() {
     var el = document.getElementById("card");
     el.style.background = "url(001-Basik-Paper.png)";
-    el.style.position = "absolute";
-    el.style.left = "50%";
-    el.style.top = "5%";
-    el.style.width = 640;
-    el.style.height = 480;
+    setLayout(el, "50%", "5%", 640, 480);
     el.style.marginLeft = 640 / 2 * -1;
     el.style.boxShadow = "10px 10px 5px #888888";
   }
 
   function setupGreeting() {
     var el = document.getElementById("greeting");
-    el.style.position = "absolute";
-    el.style.left = 100;
-    el.style.top = 120;
+    setLayout(el, 100, 120, -1, -1)
     el.style.fontSize = 60;
 
     if (window.navigator.languages[0] == "ja") {
@@ -29,11 +23,7 @@
   function setupMessage() {
     var el = document.createElement("p");
     document.getElementById("card").appendChild(el);
-    el.style.position = "absolute";
-    el.style.left = 170;
-    el.style.top = 270;
-    el.style.width = 390;
-    el.style.height = 100;
+    setLayout(el, 170, 270, 390, 100);
     el.style.fontSize = 24;
     el.id = "msg";
 
@@ -48,10 +38,7 @@
     var el = document.createElement("img");
     document.getElementById("card").appendChild(el);
     el.src = "christmas_mark01_santa.png";
-    el.style.position = "absolute";
-    el.style.left = 80;
-    el.style.top = 260;
-    el.style.height = 100;
+    setLayout(el, 80, 260, -1, 100);
 
     el.addEventListener("mousedown", function() {
       var msg = document.getElementById("msg");
@@ -59,21 +46,30 @@
         msg.textContent = "ステキなクリスマスになりますように！";
       } else {
         msg.textContent = "Have a nice Christmas!";
-      };
+      }
 
       for (var i = 0; i < 10; i++) {
         var x = Math.floor((Math.random() * 640) + 1);
         var y = Math.floor((Math.random() * 480) + 1);
         var el = document.createElement("img");
         document.getElementById("card").appendChild(el);
-        el.style.position = "absolute";
-        el.style.left = x;
-        el.style.top = y;
-        el.style.width = 30;
-        el.style.height = 30;
+        setLayout(el, x, y, 30, 30);
         el.src = "snow_crystal3.png";
       }
     });
+  }
+
+  function setLayout(element, x, y, width, height) {
+    element.style.position = "absolute";
+    element.style.left = x;
+    element.style.top = y;
+
+    if (width !== -1) {
+      element.style.width = width;
+    }
+    if (height !== -1) {
+      element.style.height = height;
+    }
   }
 
   SIJPCC.main = function() {
