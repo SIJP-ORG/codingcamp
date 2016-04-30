@@ -1,5 +1,8 @@
 (function(SIJPCC){
 
+  var clickCount = 0;
+  var persons = ['おじいちゃん', 'おばあちゃん','おばさん'];
+
   function setupCard() {
     var el = document.getElementById("card");
     el.style.background = "url(001-Basik-Paper.png)";
@@ -18,11 +21,7 @@
     el.style.left = 0;
     el.style.top = 0;
     el.style.fontSize = "60px";
-    if (window.navigator.languages[0] == "ja") {
-      el.textContent = "メリークリススマ！";
-    } else {
-      el.textContent = "Merry Christmas!";
-    }
+    el.textContent = "メリークリススマ！";
   }
 
   function setupMessage() {
@@ -35,11 +34,7 @@
     el.style.height = 100;
     el.style.fontSize = 24;
     el.id = "msg";
-    if (window.navigator.languages[0] == "ja") {
-      el.textContent = "⇦アイコンをクリックしてね";
-    } else {
-      el.textContent = "⇦Please click the icon";
-    }
+    el.textContent = "⇦アイコンをクリックしてね";
   }
 
   function setupIcon() {
@@ -51,19 +46,30 @@
     el.style.top = 260;
     el.style.height = 100;
     el.addEventListener("mousedown", function() {
-      var msg = document.getElementById("msg");
-      msg.textContent = "ステキなクリスマスになりますように！";
+      var to = "";
+      to += persons[0] + " ";
+      to += persons[1] + " ";
 
-      var x = Math.floor((Math.random() * 640) + 1);
-      var y = Math.floor((Math.random() * 480) + 1);
+      var msg = document.getElementById("msg");
+      msg.textContent = to + "楽しいクリスマスになりますように！";
+
       var im = document.createElement("img");
       document.getElementById("card").appendChild(im);
+      var x = Math.floor((Math.random() * 640) + 1);
+      var y = Math.floor((Math.random() * 480) + 1);
       im.style.position = "absolute";
       im.style.left = x;
       im.style.top = y;
       im.style.width = 30;
       im.style.height = 30;
-      im.src = "snow_crystal3.png";
+
+      if (clickCount < 10) {
+        im.src = "snow_crystal3.png";
+      } else {
+        im.src = "unchi_character.png"
+      }
+
+      clickCount = clickCount + 1;
     });
   }
 

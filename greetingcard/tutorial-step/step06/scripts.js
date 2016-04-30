@@ -1,7 +1,7 @@
-(function(SIJPCC) {
+(function(SIJPCC){
 
   var clickCount = 0;
-  var persons = ['おじいちゃん', 'おばあちゃん','おばさん'];
+  var persons = ['おじいちゃん', 'おばあちゃん','おばさん','おじさん'];
 
   function setupCard() {
     var el = document.getElementById("card");
@@ -11,7 +11,7 @@
     el.style.top = "5%";
     el.style.width = 640;
     el.style.height = 480;
-    el.style.marginLeft = 640 / 2 * -1 + "px";
+    el.style.marginLeft = 640 / 2 * -1;
     el.style.boxShadow = "10px 10px 5px #888888";
   }
 
@@ -48,8 +48,9 @@
 
     el.addEventListener("mousedown", function() {
       var to = "";
-      to += persons[0] + " ";
-      to += persons[1] + " ";
+      for (var i = 0; i < persons.length; i++) {
+        to += persons[i] + " ";
+      }
 
       var msg = document.getElementById("msg");
       msg.textContent = to + "楽しいクリスマスになりますように！";
@@ -63,7 +64,6 @@
       im.style.top = y;
       im.style.width = 30;
       im.style.height = 30;
-
       if (clickCount < 10) {
         im.src = "snow_crystal3.png";
       } else {
