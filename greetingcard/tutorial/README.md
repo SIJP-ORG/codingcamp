@@ -1,7 +1,11 @@
-#チュートリアル
+#Step00
 
-このチュートリアルは、まずグリーティングカードがいくつかの不具合によってうまく表示されない状態からスタートします。
+This is the starting point of the tutorial. At this state, it contains these bugs and feature improvement points:
 
-[チュートリアルのページ](https://rawgit.com/SIJP-ORG/codingcamp/master/greetingcard/tutorial/index.html)
-
-コーディング キャンプ セッションではインストラクターの指導に従って、不具合を修正していきます。参加者はそれぞれ自分のグリーティングカードに修正を加えていきます。具体的な修正方法はインストラクターがスライド等を使って説明します。分からない場合はインストラクターかアシスタントが助けてくれます。
+The main message contains a spelling error.　
+The main message's location is not set at a right location.
+The name of the Santa's image file is incorrect.
+The card's outline needs shadow.
+The icon after 10 clicks is a wrong image. It needs to be another snow flake image.
+The message only includes grand-pa and grand-ma. It should also show aunt.
+The message only includes grand-pa, grand-ma, and aunt. It should also show uncle.
