@@ -64,7 +64,7 @@
       im.style.height = 30;
 
       if (clickCount < 10) {
-        im.src = "snow_crystal3.png";
+        im.src = "snow_crystal2.png";
       } else {
         im.src = "unchi_character.png"
       }

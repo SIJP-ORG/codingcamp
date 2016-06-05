@@ -47,12 +47,12 @@
   function setupIcon() {
     var el = document.createElement("img");
     document.getElementById("card").appendChild(el);
-    el.src = "christmas_mark01_santa.png";
+    el.src = "santa_claus.png";
     el.style.position = "absolute";
     el.style.left = 80;
     el.style.top = 260;
     el.style.height = 100;
-    
+
     el.addEventListener("mousedown", function() {
       var msg = document.getElementById("msg");
       if (window.navigator.languages[0] == "ja") {

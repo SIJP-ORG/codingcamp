@@ -40,7 +40,7 @@
   function setupIcon() {
     var el = document.createElement("img");
     document.getElementById("card").appendChild(el);
-    el.src = "christmas_mark01_santa.png";
+    el.src = "santa_claus.png";
     el.style.position = "absolute";
     el.style.left = 80;
     el.style.top = 260;
@@ -64,7 +64,7 @@
       im.style.height = 30;
 
       if (clickCount < 10) {
-        im.src = "snow_crystal3.png";
+        im.src = "snow_crystal2.png";
       } else {
         im.src = "unchi_character.png"
       }
