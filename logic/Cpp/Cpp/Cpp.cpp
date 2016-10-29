@@ -52,7 +52,7 @@ Result getResult(RPS a, RPS b)
 		result = Result::even;
 	}
 	else if ((a == RPS::rock && b == RPS::scissors) ||
-		(a == RPS::scissors && b == RPS::paper) || 
+		(a == RPS::scissors && b == RPS::paper) ||
 		(a == RPS::paper && b == RPS::rock))
 	{
 		result = Result::win;
@@ -87,14 +87,14 @@ void main()
 
 		if (result == Result::win || result == Result::even)
 		{
-			monsters--;			
+			monsters--;
 		}
 		else if (monsters == 1)
 		{
 			monsters++;
 		}
 
-		cout << "Remaing player turn is " << turn << endl;
+		cout << "Remaining player turn is " << turn << endl;
 		cout << "Remaining monster count is " << monsters << endl;
 	}
 
@@ -108,4 +108,3 @@ void main()
 		cout << "You weren't able to defeat the two monsters. Try again!" << endl;
 	}
 }
-
